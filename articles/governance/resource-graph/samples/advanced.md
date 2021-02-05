@@ -415,7 +415,7 @@ Resources
 | where type == 'microsoft.compute/virtualmachines'
 | extend
     JoinID = toupper(id),
-    OSName = tostring(properties.osProfile.computerName),
+    VMName = tostring(properties.osProfile.computerName),
     OSType = tostring(properties.storageProfile.osDisk.osType),
     VMSize = tostring(properties.hardwareProfile.vmSize)
 | join kind=leftouter(
